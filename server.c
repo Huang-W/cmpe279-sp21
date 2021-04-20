@@ -15,7 +15,6 @@ int main(int argc, char const *argv[])
   int server_fd, new_socket, valread;
   struct sockaddr_in address;
   int opt = 1;
-  int ch;
   int addrlen = sizeof(address);
   char buffer[102] = {0};
   char *hello = "Hello from server";
@@ -97,10 +96,8 @@ int main(int argc, char const *argv[])
     send(new_socket , hello , strlen(hello) , 0 );
     printf("Hello message sent\n");
     return 0;
-
   } else {
     /* parent process */
-
     int wait_status;
     wait(&wait_status);
     return wait_status;

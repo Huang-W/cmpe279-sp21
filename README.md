@@ -2,13 +2,13 @@
 
 #### Programming Assignment 1
 
-In this assignment, the parent and child processes share the same file descriptors (without re-exec).
+In this assignment, the parent and child processes share the same local variables.
 
-The fork is done after binding the socket to a local address on port 80 (a privileged operation).
+A fork is done after the privileged binding of port 80.
 
-After forking, the parent process waits for the child process to exit, and the child process blocks until a connection is present.
+The parent process waits for the child process to exit, while the child blocks until a connection is present.
 
-A passwd entry with name of 'nobody' is expected to be present.
+The child lowers its privilege using a passwd entry with name of 'nobody'.
 
 ---
 
